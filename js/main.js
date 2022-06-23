@@ -37,3 +37,13 @@ window.addEventListener('scroll', _.throttle(function() {
   }
 },300));
 // _.throttle(함수,시간) : 함수를 시간 단위마다 실행하도록 한다.
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function (fadeEl, index){
+  // gsap.to(요소, 지속시간, 옵션);
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7, 
+    opacity: 1
+  });
+});
+//fadeEls의 요소를 하나씩 fadeEl로 받으며, 두번째 인수에 index를 받아서 사용할 수도 있다.
